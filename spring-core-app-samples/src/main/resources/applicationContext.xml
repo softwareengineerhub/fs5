@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+">
+
+    <context:property-placeholder location="car.properties"/>
+
+    <bean id="myRepository" class="com.app.core.ch01.nospring.MyDefultRepositoryImpl" scope="prototype"/>
+
+    <bean id="myService" class="com.app.core.ch01.nospring.PersonDefaultServiceImpl">
+        <constructor-arg ref="myRepository"/>
+    </bean>
+
+    <bean id="myService2" class="com.app.core.ch01.nospring.PersonDefaultServiceImpl">
+        <constructor-arg ref="myRepository"/>
+    </bean>
+
+    <bean id="myService3" class="com.app.core.ch01.nospring.PersonDefaultServiceImpl">
+        <constructor-arg ref="myRepository2"/>
+    </bean>
+
+    <bean id="myRepository2" class="com.app.core.ch01.nospring.MyDefultRepositoryImpl"/>
+
+    <bean id="myService4" class="com.app.core.ch01.nospring.PersonServiceDenisImpl">
+        <property name="myRepository" ref="myRepository"/>
+    </bean>
+
+    <bean id="myService5" class="com.app.core.ch01.nospring.PersonServiceDenisImpl">
+        <property name="myRepository" ref="myRepository2"/>
+    </bean>
+
+    <bean name="a,b,c;d" class="com.app.core.ch01.spring.MyDog"
+          init-method="init"
+          destroy-method="destroy"  />
+
+    <bean name="a1,b1,c1;d1" class="com.app.core.ch01.spring.MyDog"
+          init-method="init"
+          destroy-method="destroy" scope="prototype"  />
+
+    <bean name="lazyCat" class="com.app.core.ch01.spring.MyCat"
+          init-method="init" lazy-init="true"
+    />
+
+<bean id="myCar" class="com.app.core.ch01.spring.MyCar">
+    <property name="age" value="${car.age}"/>
+    <property name="name" value="${car.name}"/>
+ </bean>
+
+ <bean id="mySTO" class="com.app.core.ch01.spring.MySTO">
+     <property name="cuurentCarName" value="#{myCar.name}"/>
+ </bean>
+
+
+</beans>
