@@ -1,0 +1,3 @@
+-DarchetypeGroupId=org.codehaus.mojo.archetypes 
+-DarchetypeArtifactId=webapp-javaee7 
+-DarchetypeVersion=1.1 

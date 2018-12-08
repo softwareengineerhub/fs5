@@ -1,0 +1,14 @@
+<persons>
+    <person age="10">
+        <name>Denis</name>
+    </person>
+    <person age="15">
+        <name>Piter</name>
+    </person>
+    <person  age="20">
+        <name>Jack</name>
+    </person>
+    <person age="40">
+        <name>Boris</name>
+    </person>
+</persons>
