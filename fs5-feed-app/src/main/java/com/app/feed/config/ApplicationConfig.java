@@ -9,6 +9,7 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.listener.DefaultMessageListenerContainer;
 import org.springframework.jmx.export.MBeanExporter;
 import org.springframework.jmx.export.assembler.MethodNameBasedMBeanInfoAssembler;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.jms.ConnectionFactory;
 import java.util.HashMap;
@@ -17,6 +18,7 @@ import java.util.Map;
 @SpringBootApplication(scanBasePackages = {"com.app.feed"})
 @EnableJms
 @EnableMBeanExport
+@EnableScheduling
 public class ApplicationConfig {
 
     @Bean
