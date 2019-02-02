@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Context>
+
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           dataSourceName="personDS"
+           localDataSource="true"
+           userTable="users"
+           userNameCol="login"
+           userCredCol="pass"
+           userRoleTable="users"
+           roleNameCol="role"
+
+    />
+
+
+</Context>
