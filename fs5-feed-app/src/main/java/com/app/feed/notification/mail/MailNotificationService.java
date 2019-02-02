@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import java.util.Properties;
 
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -15,8 +14,8 @@ import javax.mail.internet.MimeMessage;
 public class MailNotificationService {
 
     public void sendMail() {
-        final String username = "fs5mailer.fs5mailer@gmail.com";
-        final String password = "Kiev111111";
+        final String username = "account@gmail.com";
+        final String password = "credentailsaccount";
 
 
         Properties props = new Properties();
@@ -44,9 +43,9 @@ public class MailNotificationService {
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("fs5mailer.fs5mailer@gmail.com"));
+            message.setFrom(new InternetAddress("javamailtest.javamailtest@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("fs5mailer.fs5mailer@gmail.com"));
+                    InternetAddress.parse("javamailtest.javamailtest@gmail.com"));
             message.setSubject("Employee alert Notification");
             message.setText("We have incorrect data. PLease check");
 
