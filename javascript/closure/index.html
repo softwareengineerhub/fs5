@@ -1,0 +1,23 @@
+<html>
+    <script type="text/javascript">
+        function makeCall(){
+            var name = "Closure";
+            var i = 0;
+            function displayName(){
+                alert(name);
+                i++;
+                name=name+i;
+            }
+            return displayName;
+        };
+        
+        var myFunc = makeCall();
+        var myFunc2 = makeCall();
+    </script>
+    
+    <body>
+        <button name="click" onclick="myFunc.call()">CLICK</button>   
+        <br>
+        <button name="click2" onclick="myFunc2.call()">CLICK2</button>   
+    </body>
+</html>
