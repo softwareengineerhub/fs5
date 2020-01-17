@@ -21,9 +21,11 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
+        <finalName>person-crud-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
