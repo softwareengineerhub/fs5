@@ -1,3 +1,4 @@
+target/
 /java-core-app/target
 /java-core-app/.idea
 /java-core-app/java-core-app.iml
